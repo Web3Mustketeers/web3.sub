@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "mumbai",
+  defaultNetwork: "local",
    networks: {
     // Add your network configurations here
     sepolia: {
