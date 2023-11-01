@@ -1,5 +1,5 @@
 {
-	"name": "decenter-contracts",
+	"name": "web3.sub",
 	"private": true,
 	"scripts": {
 		"node": "hardhat node",
