@@ -30,7 +30,7 @@ jobs:
 
       - name: Write environment
         run: |
-          echo ${{env.envfile}} > .env
+          echo $envfile > .env
           sed -i 's/ /\n/g' .env
           source .env
 
