@@ -5,6 +5,7 @@
 		"start": "hardhat node",
 		"pretest": "npm run start",
 		"test": "hardhat test",
+		"test:c": "concurrently \"pnpm:test\" \"pnpm:start\"",
 		"test:sepolia": "hardhat test --network sepolia",
 		"test:mumbai": "hardhat test --network mumbai",
 		"test:local": "hardhat test --network local",
