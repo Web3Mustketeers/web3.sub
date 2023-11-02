@@ -1,6 +1,6 @@
 pragma solidity ^0.8.9;
 
-interface V {
+interface Web3Sub {
     event NewSubscription(address contractAddress, address wallet);
     event UnSubscribed(address contractAddress, address wallet);
 

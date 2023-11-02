@@ -3,16 +3,18 @@ pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
+import "./web3sub.interface.sol";
 
-
-contract V {
-    event NewSubscription(address contractAddress, address wallet);
-    event UnSubscribed(address contractAddress, address wallet);
-    string public version = "v"; //TODO: update the version string
+contract Vx is Web3Sub {
+    string public version = "v0.0.0"; //TODO: update the version string
 
     constructor() {
         // TODO: make it upgradeable later
-        string memory initMsg = string.concat("init:",version,Strings.toString(block.timestamp));
+        string memory initMsg = string.concat(
+            "init:",
+            version,
+            Strings.toString(block.timestamp)
+        );
         console.log(initMsg);
     }
 
@@ -22,7 +24,7 @@ contract V {
     }
 
     function unsubscribe(address contractAddress, address wallet) external {
-      // TODO: implement the logic
+        // TODO: implement the logic
         emit UnSubscribed(contractAddress, wallet);
     }
 
