@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-// Uncomment this line to use console.log
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+
 
 contract V {
     event NewSubscription(address contractAddress, address wallet);
@@ -11,6 +12,8 @@ contract V {
 
     constructor() {
         // TODO: make it upgradeable later
+        string memory initMsg = string.concat("init:",version,Strings.toString(block.timestamp));
+        console.log(initMsg);
     }
 
     function subscribe(address contractAddress, address wallet) external {
