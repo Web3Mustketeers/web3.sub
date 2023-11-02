@@ -1,4 +1,4 @@
-name: Hardhat v2
+name: Hardhat local
 
 on:
   push:
@@ -12,7 +12,7 @@ env:
   envfile: ${{secrets.ENV}}
 
 jobs:
-  test:
+  test-local:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,8 +36,7 @@ jobs:
 
       - name: Test Local
         uses: ambersun1234/hardhat-test-action@v1
-        with:
-          network: local
+
 
       # - name: Test
       #   uses: ambersun1234/hardhat-test-action@v1
