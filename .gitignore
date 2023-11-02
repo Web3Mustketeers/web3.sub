@@ -12,3 +12,10 @@ artifacts
 .vscode/
 .idea/
 .DS_Store
+
+artifacts/
+.deps/
+venv/
+node_modules/
+.venv/
+cache/

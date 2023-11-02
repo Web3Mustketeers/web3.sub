@@ -1,12 +1,19 @@
 {
-	"name": "decenter-contracts",
+	"name": "web3.sub",
 	"private": true,
 	"scripts": {
-		"node": "hardhat node",
+		"start": "hardhat node",
+		"pretest": "npm run start",
 		"test": "hardhat test",
+		"test:c": "concurrently \"pnpm:test\" \"pnpm:start\"",
+		"test:sepolia": "hardhat test --network sepolia",
+		"test:mumbai": "hardhat test --network mumbai",
+		"test:local": "hardhat test --network local",
 		"clean": "hardhat clean",
 		"compile": "hardhat compile",
-		"sepolia": "hardhat run scripts/deploy.ts --network sepolia"
+		"deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+		"deploy:mumbai": "hardhat run scripts/deploy.ts --network mumbai",
+		"deploy:local": "hardhat run scripts/deploy.ts --network local"
 	},
 	"devDependencies": {
 		"@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
@@ -14,12 +21,14 @@
 		"@nomicfoundation/hardhat-network-helpers": "^1.0.0",
 		"@nomicfoundation/hardhat-toolbox": "^3.0.0",
 		"@nomicfoundation/hardhat-verify": "^1.0.0",
+		"@remix-project/remixd": "^0.6.18",
 		"@typechain/ethers-v6": "^0.4.0",
 		"@typechain/hardhat": "^8.0.0",
 		"@types/chai": "^4.2.0",
 		"@types/mocha": ">=9.1.0",
 		"@types/node": ">=16.0.0",
 		"chai": "^4.2.0",
+		"concurrently": "^8.2.2",
 		"ethers": "^6.4.0",
 		"hardhat": "^2.18.3",
 		"hardhat-gas-reporter": "^1.0.8",
@@ -30,6 +39,8 @@
 		"typescript": ">=4.5.0"
 	},
 	"dependencies": {
+		"@openzeppelin/contracts": "^4.9.3",
+		"@openzeppelin/contracts-upgradeable": "^4.9.3",
 		"dotenv": "^16.3.1"
 	}
 }
