@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "../web3sub.interface.sol";
 
 contract V1 is Web3Sub {
-    string public version = "v0.0.0"; //TODO: update the version string
+    string public version = "v1.0.0"; //TODO: update the version string
 
     constructor() {
         // TODO: make it upgradeable later
