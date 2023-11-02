@@ -4,9 +4,10 @@ pragma solidity ^0.8.9;
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
-contract V1 {
+contract V {
     event NewSubscription(address contractAddress, address wallet);
     event UnSubscribed(address contractAddress, address wallet);
+    string public version = "v"; //TODO: update the version string
 
     constructor() {
         // TODO: make it upgradeable later
