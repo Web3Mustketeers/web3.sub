@@ -37,6 +37,13 @@ jobs:
       - name: Test Local
         uses: ambersun1234/hardhat-test-action@v1
 
+      - name: Integration test
+        uses: ambersun1234/hardhat-test-action@v1
+        with:
+          network: sepolia
+          private_key: ${{ env.PRIVATE_KEY }}
+          rpc_url: ${{ env.RPC_URL }}
+
 
       # - name: Test
       #   uses: ambersun1234/hardhat-test-action@v1
