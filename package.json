@@ -11,10 +11,11 @@
 		"deploy:mumbai": "hardhat run scripts/deploy.ts --network mumbai",
 		"deploy:local": "hardhat run scripts/deploy.ts --network local",
 		"test": "hardhat test",
-		"test:local": "concurrently \"pnpm:start\" \"pnpm:test:local:agile\"",
 		"test:sepolia": "hardhat test --network sepolia",
 		"test:mumbai": "hardhat test --network mumbai",
-		"test:local:agile": "hardhat test --network local"
+		"pretest:local": "npm run start & sleep 2",
+		"test:local": "hardhat test --network local",
+		"test:local:dev": "concurrently \"pnpm:start\" \"pnpm:test:local\""
 	},
 	"devDependencies": {
 		"@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
