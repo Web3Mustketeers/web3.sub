@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "../web3sub.interface.sol";
+import "contracts/web3sub.interface.sol";
 
 contract V0 is Web3Sub {
     string public version = string.concat("v", "0.0.0");

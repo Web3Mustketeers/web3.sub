@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "./web3sub.interface.sol";
+import "contracts/web3sub.interface.sol";
 
 //TODO: Vx
 contract Vx is Web3Sub {
