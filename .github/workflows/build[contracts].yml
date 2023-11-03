@@ -13,7 +13,7 @@ env:
 
 defaults:
   run:
-    shell: zsh
+    shell: bash
     working-directory: .
 
 jobs:
