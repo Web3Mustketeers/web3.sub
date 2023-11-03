@@ -23,8 +23,4 @@ EXPOSE $PORT
 
 COPY --from=builder /app ./
 
-CMD ["sh", "-c", "npm run test && npm run test:e2e"]
-
-ENTRYPOINT ["npm", "run", "start:prod"]
-
 LABEL maintainer="Hiro <laciferin@gmail.com>"
