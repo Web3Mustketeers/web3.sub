@@ -1,18 +1,22 @@
-name: Hardhat
+name: Contracts [Build]
 
 on:
   push:
-    # branches:
-    #   - main
+
   pull_request:
 
   workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: .
 
 env:
   envfile: ${{secrets.ENV}}
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,6 +43,3 @@ jobs:
 
       - name: Compile contracts
         run: npx hardhat compile
-
-      - name: Run tests
-        run: npx hardhat test
