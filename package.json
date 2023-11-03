@@ -1,6 +1,10 @@
 {
   "name": "web3.sub",
   "private": true,
+  "version": "0.6.0",
+  "description": "Web3Sub:new standard for subscriptions for DApps. Scalable solution for on chain subscriptions",
+  "author": "laciferin@gmail.com",
+  "license": "MIT",
   "scripts": {
     "postinstall": "npm run build",
     "style": "prettier -w .",
@@ -46,5 +50,17 @@
     "@openzeppelin/contracts": "^4.9.3",
     "@openzeppelin/contracts-upgradeable": "^4.9.3",
     "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=6.0.0",
+    "pnpm": ">=8.6.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Web3Mustketeers/web3.sub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Web3Mustketeers/web3.sub/issues"
   }
 }
