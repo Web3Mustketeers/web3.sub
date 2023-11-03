@@ -1,4 +1,4 @@
-name: Hardhat
+name: Contracts [Build]
 
 on:
   push:
@@ -11,6 +11,12 @@ on:
 env:
   envfile: ${{secrets.ENV}}
 
+
+defaults:
+  run:
+    shell: zsh
+    working-directory: .
+  
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -40,5 +46,4 @@ jobs:
       - name: Compile contracts
         run: npx hardhat compile
 
-      - name: Run tests
-        run: npm run test:local
+
