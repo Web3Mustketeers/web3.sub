@@ -11,14 +11,13 @@ on:
 env:
   envfile: ${{secrets.ENV}}
 
-
 defaults:
   run:
     shell: zsh
     working-directory: .
-  
+
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -45,5 +44,3 @@ jobs:
 
       - name: Compile contracts
         run: npx hardhat compile
-
-
