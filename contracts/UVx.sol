@@ -5,8 +5,9 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "./web3subUpgradeable.interface.sol";
 
+// TODO: UVx
 contract UVx is Web3SubUpgradeable {
-    string public version = "v0.0.0"; //TODO: update the version string
+    string public version = string.concat("uv", "x.0.0"); //TODO: update the version
 
     constructor() {
         // TODO: make it upgradeable later
@@ -35,8 +36,10 @@ contract UVx is Web3SubUpgradeable {
         require(contractAddress != address(0x0), "invalid contract address");
         require(wallet != address(0x0), "invalid walletAddress");
 
+        bool verified = false;
+
         // TODO: implement the logic
 
-        return true;
+        return verified;
     }
 }
