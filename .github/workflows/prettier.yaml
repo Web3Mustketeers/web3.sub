@@ -2,10 +2,22 @@ name: Prettier
 
 on:
   pull_request:
-  push:
-    branches: [main]
+    branches:
+
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - 'main'
+  #    paths: ['**.yaml','**.js', '**.jsx', '**.ts', '**.tsx', '**.css', '**.scss', '**.html', '**.vue', '**.json', '**.md']
 
   workflow_dispatch:
+    inputs:
+      only_changed:
+        description: 'Only changed'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -15,33 +27,62 @@ permissions:
   actions: write
   contents: write
 
+#env:
+#  TOKEN_GITHUB: ${{github.token}}
+
+env:
+  ONLY_CHANGED: ${{ inputs.only_changed }}
+
 jobs:
   prettier:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 2
           ref: ${{ github.head_ref }}
-          # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
-          persist-credentials: false
+          persist-credentials: true
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.6
 
       - name: Git config
         run: |
-          git config user.name Nasfame
-          git config user.email laciferin@gmail.com
+          git config --global user.name Hiro
+          git config --global user.email laciferin@gmail.com
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: 'pnpm'
+          node-version: 20
+          check-latest: false
+
+      - name: Install dependencies
+        continue-on-error: true
+        run: pnpm install
+
+
+      - name: Create .prettierignore
+        shell: bash
+        run: |
+          cp .prettierignore .prettierignore.ci
+          echo ".github/workflows/${GITHUB_WORKFLOW}.yaml" >> .prettierignore.ci
+          echo ".github/workflows/*.yaml" >> .prettierignore.ci
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
+        env:
+          GITHUB_ACTOR: Baymax # ${{github.actor}}
         with:
           dry: false
           github_token: ${{ github.token }}
-          same_commit: true
-          commit_message: "style: pretty."
-          commit_description: "automated by ci"
-          file_pattern: "*"
-          only_changed: false
-          prettier_options: "--write ."
+          same_commit: false
+          commit_message: 'style: pretty code' 
+          commit_description: 'by ci'
+                  #  file_pattern: "**/*.{js,jsx,ts,tsx,css,scss,html,vue,json,md}`"
+          only_changed: ${{ env.ONLY_CHANGED }}
+          prettier_options: '--write . --ignore-path .prettierignore.ci'
 
