@@ -32,11 +32,9 @@ contract UVx is Web3SubUpgradeable {
     function verify(
         address contractAddress,
         address wallet
-    ) external view returns (bool) {
+    ) external view returns (bool verified) {
         require(contractAddress != address(0x0), "invalid contract address");
         require(wallet != address(0x0), "invalid walletAddress");
-
-        bool verified = false;
 
         // TODO: implement the logic
 

@@ -29,11 +29,11 @@ contract DappV0 is Web3Sub {
         emit UnSubscribed(wallet);
     }
 
-    function verify(address wallet) external view returns (bool) {
+    function verify(address wallet) external view returns (bool verified) {
         require(msg.sender != address(0x0), "invalid contract address");
         require(wallet != address(0x0), "invalid walletAddress");
-
-        bool verified = subscribers[wallet];
+        
+        verified = subscribers[wallet];
         return verified;
     }
 }
