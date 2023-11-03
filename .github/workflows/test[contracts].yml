@@ -16,7 +16,7 @@ env:
   envfile: ${{secrets.ENV}}
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
