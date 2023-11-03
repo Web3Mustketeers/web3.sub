@@ -3,9 +3,9 @@ pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "../web3sub.interface.sol";
+import "../web3subUpgradeable.interface.sol";
 
-contract V1 is Web3Sub {
+contract V1 is Web3SubUpgradeable {
     string public version = "v1.0.0"; //TODO: update the version string
 
     constructor() {
@@ -15,6 +15,7 @@ contract V1 is Web3Sub {
             version,
             Strings.toString(block.timestamp)
         );
+        // TODO: allow setting versions by owner in the contract
         console.log(initMsg);
     }
 
