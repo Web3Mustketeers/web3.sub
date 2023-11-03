@@ -5,11 +5,9 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "contracts/web3sub.interface.sol";
 
-contract V0 is Web3Sub {
+contract DappV0 is Web3Sub {
     string public version = string.concat("v", "0.0.0");
     mapping(address => bool) public subscribers;
-
-    // TODO: extend this every Dapp
 
     constructor() {
         string memory initMsg = string.concat(
@@ -27,7 +25,6 @@ contract V0 is Web3Sub {
     }
 
     function unsubscribe(address wallet) external {
-        // TODO: implement the logic
         subscribers[wallet] = false;
         emit UnSubscribed(wallet);
     }
@@ -37,9 +34,6 @@ contract V0 is Web3Sub {
         require(wallet != address(0x0), "invalid walletAddress");
 
         bool verified = subscribers[wallet];
-
-        // TODO: implement the logic
-
         return verified;
     }
 }
