@@ -51,5 +51,5 @@ jobs:
           sleep 4
 
       - name: Test
-        run: hardhat test --network local
+        run: npx hardhat test --network local
       
