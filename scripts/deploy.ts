@@ -1,5 +1,5 @@
 import { ethers } from "hardhat";
-import {config} from 'dotenv'
+import { config } from "dotenv";
 
 async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);

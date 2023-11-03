@@ -44,11 +44,9 @@ jobs:
           private_key: ${{ env.PRIVATE_KEY }}
           rpc_url: ${{ env.RPC_URL }}
 
-
       # - name: Test
       #   uses: ambersun1234/hardhat-test-action@v1
       #   with:
       #     network: goerli
       #     private_key: ${{ secrets.PRIVATE_KEY }}
       #     rpc_url: ${{ secrets.RPC_URL }}
-
