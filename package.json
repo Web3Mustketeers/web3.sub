@@ -2,6 +2,7 @@
   "name": "web3.sub",
   "private": true,
   "scripts": {
+    "postinstall": "npm run build",
     "style": "prettier -w .",
     "start": "hardhat node",
     "build": "hardhat compile",
