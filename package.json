@@ -6,7 +6,6 @@
   "author": "laciferin@gmail.com",
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm run build",
     "style": "prettier -w .",
     "start": "hardhat node",
     "build": "hardhat compile",

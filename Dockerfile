@@ -19,7 +19,6 @@ ENV MODE="prod"
 
 WORKDIR /app
 
-EXPOSE $PORT
 
 COPY --from=builder /app ./
 

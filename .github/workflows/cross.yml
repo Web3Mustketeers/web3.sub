@@ -52,6 +52,12 @@ jobs:
           node-version: ${{ matrix.node_version }}
           architecture: ${{ matrix.architecture }}
           check-latest: true
+      
+      - name: Write environment
+        run: |
+          echo $envfile > .env
+          sed -i 's/ /\n/g' .env
+          source .env
 
       - name: Install dependencies
         run: pnpm install
