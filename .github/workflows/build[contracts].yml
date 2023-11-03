@@ -2,19 +2,18 @@ name: Contracts [Build]
 
 on:
   push:
-    # branches:
-    #   - main
+
   pull_request:
 
   workflow_dispatch:
-
-env:
-  envfile: ${{secrets.ENV}}
 
 defaults:
   run:
     shell: bash
     working-directory: .
+
+env:
+  envfile: ${{secrets.ENV}}
 
 jobs:
   build:
