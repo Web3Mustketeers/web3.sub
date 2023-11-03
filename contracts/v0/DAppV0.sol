@@ -5,9 +5,9 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "contracts/web3sub.interface.sol";
 
-//TODO: Vx
-contract Vx is Web3Sub {
-    string public version = string.concat("v", "x.0.0"); //TODO: update the version
+contract DappV0 is Web3Sub {
+    string public version = string.concat("v", "0.0.0");
+    mapping(address => bool) public subscribers;
 
     constructor() {
         string memory initMsg = string.concat(
@@ -19,12 +19,13 @@ contract Vx is Web3Sub {
     }
 
     function subscribe(address wallet) external {
-        // TODO: implement the logic
+        require(!subscribers[wallet], "Wallet is already subscribed");
+        subscribers[wallet] = true;
         emit NewSubscription(wallet);
     }
 
     function unsubscribe(address wallet) external {
-        // TODO: implement the logic
+        subscribers[wallet] = false;
         emit UnSubscribed(wallet);
     }
 
@@ -32,10 +33,7 @@ contract Vx is Web3Sub {
         require(msg.sender != address(0x0), "invalid contract address");
         require(wallet != address(0x0), "invalid walletAddress");
 
-        bool verified = false;
-
-        // TODO: implement the logic
-
+        bool verified = subscribers[wallet];
         return verified;
     }
 }

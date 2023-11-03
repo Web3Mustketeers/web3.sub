@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "./web3subUpgradeable.interface.sol";
+import "contracts/web3subUpgradeable.interface.sol";
 
 // TODO: UVx
 contract UVx is Web3SubUpgradeable {
