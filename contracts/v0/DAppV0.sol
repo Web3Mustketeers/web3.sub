@@ -37,3 +37,7 @@ contract DappV0 is Web3Sub {
         return verified;
     }
 }
+/*
+Basic Dapp : contract for sub, unsub and verify
+
+*/
