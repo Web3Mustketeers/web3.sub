@@ -40,6 +40,7 @@
     "hardhat": "^2.18.3",
     "hardhat-gas-reporter": "^1.0.8",
     "rimraf": "^5.0.1",
+    "solc": "^0.8.22",
     "solidity-coverage": "^0.8.0",
     "ts-node": ">=8.0.0",
     "typechain": "^8.1.0",
