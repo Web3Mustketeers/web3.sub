@@ -15,5 +15,5 @@ interface Web3Sub {
     ) external view returns (bool);
 
    //version is public so we do not need a function for it
-
+    function getVersion() external view returns (string memory);
 }

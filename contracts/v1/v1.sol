@@ -18,7 +18,10 @@ contract V1 is Web3Sub {
             version,
             Strings.toString(block.timestamp)
         );
-        version = _version;
+        version =  string.concat(
+            "version: v1.",
+            _version
+        );
         console.log(initMsg);
     }
 
@@ -45,5 +48,9 @@ contract V1 is Web3Sub {
 
         // TODO: implement the logic
         status =  Subscriptions[contractAddress][wallet];
+    }
+
+    function getVersion () external  view returns(string memory){
+        return version;
     }
 }
