@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.20;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -32,7 +32,7 @@ contract DappV0 is Web3Sub {
     function verify(address wallet) external view returns (bool verified) {
         require(msg.sender != address(0x0), "invalid contract address");
         require(wallet != address(0x0), "invalid walletAddress");
-        
+
         verified = subscribers[wallet];
         return verified;
     }
