@@ -1,4 +1,4 @@
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.20;
 
 interface Web3SubUpgradeable {
     event NewSubscription(address contractAddress, address wallet);
