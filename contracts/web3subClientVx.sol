@@ -30,8 +30,9 @@ contract Web3SubClientVx is Web3SubClient {
     }
 
     function verify() public view returns (bool verified) {
-        require(msg.sender != address(0x0), "invalid contract address");
-        require(wallet != address(0x0), "invalid walletAddress");
+        address user = msg.sender;
+        require(user != address(0x0), "invalid contract address");
+        require(user != address(0x0), "invalid walletAddress");
         // TODO: implement the logic
         return verified;
     }
