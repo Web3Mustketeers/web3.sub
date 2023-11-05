@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "contracts/web3sub.interface.sol";
 import "contracts/web3subClient.interface.sol";
 
-//TODO: replace with the of web3sub version
+//TODO: replace with the of x version with Web3SubVersion
 contract Web3SubClientVx is Web3SubClient {
     string public web3subVersion = string.concat("v", "x.0.0"); //TODO: update the version
 

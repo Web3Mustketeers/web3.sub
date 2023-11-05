@@ -2,11 +2,13 @@
 pragma solidity ^0.8.20;
 
 interface Web3SubClient {
-    function subscribe() public;
+    function subscribe() external;
 
-    function unsubscribe() public;
+    function unsubscribe() external;
 
-    function verify() public view returns (bool);
+    function verify() external view returns (bool);
+
+    function web3subVersion() external view returns (string memory);
 }
 
 // Web3SubClient is the minimal interface that a client of web3sub needs to implement

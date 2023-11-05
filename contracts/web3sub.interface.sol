@@ -10,6 +10,4 @@ interface Web3Sub {
     function unsubscribe(address wallet) external;
 
     function verify(address wallet) external view returns (bool);
-
-    function web3subVersion() external view returns (string memory);
 }
