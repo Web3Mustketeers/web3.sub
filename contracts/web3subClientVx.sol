@@ -8,7 +8,7 @@ import "contracts/web3subClient.interface.sol";
 
 //TODO: replace with the of x version with Web3SubVersion
 contract Web3SubClientVx is Web3SubClient {
-    string public web3subVersion = string.concat("v", "x.0.0"); //TODO: update the version
+    string public constant web3subVersion = "vx.0.0"; //TODO: update the version
 
     constructor() {
         string memory initMsg = string.concat(
@@ -31,7 +31,6 @@ contract Web3SubClientVx is Web3SubClient {
 
     function verify() public view returns (bool verified) {
         address user = msg.sender;
-        require(user != address(0x0), "invalid contract address");
         require(user != address(0x0), "invalid walletAddress");
         // TODO: implement the logic
         return verified;
