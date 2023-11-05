@@ -12,10 +12,17 @@ interface Web3Sub {
     /// @param wallet The address of the unsubscribed wallet.
     event UnSubscribed(address wallet);
 
+    /// @dev Subscribes the given wallet to the service.
+    /// @param wallet The address of the wallet to be subscribed.
     function subscribe(address wallet) external;
 
+    /// @dev Unsubscribes the given wallet from the service.
+    /// @param wallet The address of the wallet to be unsubscribed.
     function unsubscribe(address wallet) external;
 
+    /// @dev Verifies if a wallet is currently subscribed.
+    /// @param wallet The address of the wallet to be verified.
+    /// @return true if the wallet is subscribed; otherwise, false.
     function verify(address wallet) external view returns (bool);
 }
 
