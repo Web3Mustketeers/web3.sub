@@ -7,7 +7,7 @@ import "contracts/web3sub.interface.sol";
 import "contracts/web3subClient.interface.sol";
 
 //TODO: replace with the of x version with Web3SubVersion
-contract Web3SubClientVx is Web3SubClient {
+contract Web3SubClientx is Web3SubClient {
     string public constant web3subVersion = "vx.0.0"; //TODO: update the version
 
     constructor() {
