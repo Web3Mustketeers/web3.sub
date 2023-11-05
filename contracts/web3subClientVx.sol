@@ -12,8 +12,8 @@ contract Web3SubClientVx is Web3SubClient {
 
     constructor() {
         string memory initMsg = string.concat(
-            "init:",
-            version,
+            "web3subVersionClient:",
+            web3subVersion,
             Strings.toString(block.timestamp)
         );
         console.log(initMsg);
