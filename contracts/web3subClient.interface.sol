@@ -12,3 +12,10 @@ interface Web3SubClient {
 }
 
 // Web3SubClient is the minimal interface that a client of web3sub needs to implement
+
+/*
+@@author: Hiro<laciferin@gmail.com>
+@@@title: Web3SubClient Interface
+@@@notice: Minimal Web3Sub interface that every web3sub client needs to implement
+@@dev: Make sure your Dapp implements this interface.
+*/
