@@ -12,22 +12,20 @@ interface Web3Sub {
     /// @param wallet The address of the unsubscribed wallet.
     event UnSubscribed(address wallet);
 
-    /// @dev Subscribes the given wallet to the service.
+    /// @dev Subscribes the specified wallet to the service.
     /// @param wallet The address of the wallet to be subscribed.
     function subscribe(address wallet) external;
 
-    /// @dev Unsubscribes the given wallet from the service.
+    /// @dev Unsubscribes the specified wallet from the service.
     /// @param wallet The address of the wallet to be unsubscribed.
     function unsubscribe(address wallet) external;
 
-    /// @dev Verifies if a wallet is currently subscribed.
+    /// @dev Checks if a wallet is currently subscribed.
     /// @param wallet The address of the wallet to be verified.
     /// @return true if the wallet is subscribed; otherwise, false.
     function verify(address wallet) external view returns (bool);
 }
 
-/**
-@@author: Hiro<laciferin@gmail.com>
-@@@title: Web3Sub Interface
-@@@notice:  Every Web3Sub Dapp implements this interface
-*/
+/// @author Hiro<laciferin@gmail.com>
+/// @title Web3Sub Interface
+/// @notice This interface is to be implemented by every Web3Sub Dapp.
