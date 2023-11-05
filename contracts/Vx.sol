@@ -7,7 +7,7 @@ import "contracts/web3sub.interface.sol";
 
 //TODO: Web3SubVx
 contract Web3SubVx is Web3Sub {
-    string public constant web3subVersion = "x.0.0"; //TODO: update the version
+    string public constant version = "x.0.0"; //TODO: update the version
 
     constructor() {
         string memory initMsg = string.concat(
