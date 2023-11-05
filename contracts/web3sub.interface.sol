@@ -11,5 +11,5 @@ interface Web3Sub {
 
     function verify(address wallet) external view returns (bool);
 
-    function version() external view returns (string memory);
+    function web3subVersion() external view returns (string memory);
 }
