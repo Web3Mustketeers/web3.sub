@@ -11,3 +11,9 @@ interface Web3Sub {
 
     function verify(address wallet) external view returns (bool);
 }
+
+/*
+@@author: Hiro<laciferin@gmail.com>
+@@@title: Web3Sub Interface
+@@@notice:  Every Web3Sub Dapp implements this interface
+*/
