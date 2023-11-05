@@ -11,7 +11,7 @@ interface Web3SubClient {
     function web3subVersion() external view returns (string memory);
 }
 
-// Web3SubClient is the minimal interface that a client of web3sub needs to implement
+/// Web3SubClient is the minimal interface that a client of web3sub needs to implement
 
 /*
 @@author: Hiro<laciferin@gmail.com>
